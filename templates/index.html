@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Form POST Flask First APP</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="kotak">
+    <h1>Form POST</h1>
+
+    <form method="post" action="{{ url_for('proses') }}">
+      <label for="nama">Nama</label>
+      <input type="text" id="nama" name="nama" placeholder="Tulis Nama Kamu" required>
+      <button type="submit">Kirim</button>
+    </form>
+
+    {% if nama %}
+    <p class="hasil">Halo, {{ nama }}!</p>
+    {% endif %}
+  </div>
+</body>
+</html>
